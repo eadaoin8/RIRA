@@ -18,35 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
       
         const formData = new FormData(e.target);
-        answer = formData.get('answer');
+        const answer = formData.get('answer');
       
-        // Database connection details
-        const host = 'localhost';
-        const username = 'root';
-        const password = '';  // (Change this to actual password)
-        const database = 'RIRA';
-      
-        // Connect database
-        const conn = mysqli_connect(host, username, password, database);
-      
-        // Check connection
-        if (!conn) {
-          console.error('Failed to connect to database');
-          return;
-        }
-        
-        // Create SQL query to insert data
-        $sql = `INSERT INTO responses (answer) VALUES ('$answer')`;
-      
-        if (mysqli_query($conn, $sql)) {
-          document.write('<center><h3>New record created successfully!');
-          }
-          else {
-          document.write('Error');
-          }
-      
-        // Close the connection
-        mysqli_close(conn);
+        // Send AJAX request to process.php with answer data
+        fetch('process.php', {
+          method: 'POST',
+          body: new URLSearchParams({answer: answer})
+        })
+        .then(response => response.text())
+        .then(data => {
+          console.log(data); // View response from process.php (e.g., success message)
+        })
+        .catch(error => console.error(error));
 
         // Reset for next question
         e.target.reset();
@@ -55,3 +38,4 @@ document.addEventListener('DOMContentLoaded', () => {
         audioPlayer1.currentTime = 0;
     });
 });
+
