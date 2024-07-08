@@ -8,7 +8,7 @@
 </head>
 <script src="survey.js"></script>
 <body>
-    <div class="container">
+    <div class="survey">
         <h1>Suirbhé Ceoil</h1>
         <p>Cliceáil ar an gcnaipe SEINN le do thoil chun éisteacht leis an amhrán, ansin freagair an cheist a leanann. Caithfidh tú éisteacht le 5 shoicind ar a laghad den cheol sula dtugann tú freagra</p>
         
@@ -33,6 +33,17 @@
                 <input type="Submit" value="Submit">
             </form>
         </div>
+
+        <div class="question2">
+            <h3>How long have you been coding?</h3> 
+            <ul class="option">
+                <li>Just Started</li>
+                <li>3-6 months</li>
+                <li>6-12 months</li>
+                <li>1-2 years</li>
+            </ul>
+        </div>
+    
 
     </div>
     
