@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const audioPlayer1 = document.getElementById('audioPlayer1');
-  //const audioPlayer2 = document.getElementById('audioPlayer2');
   const question1 = document.getElementById('question1');
-  //const question2 = document.getElementById('question2');
   let hasListenedEnough = false;
 
     // user has listened for at least 5 seconds
