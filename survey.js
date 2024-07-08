@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
         const formData = new FormData(e.target);
         const answer = formData.get('answer');
-      
-        // Send AJAX request to process.php with answer data
-        fetch('process.php', {
+
+        
+        fetch('survey.php', {
           method: 'POST',
           body: new URLSearchParams({answer: answer})
         })
