@@ -18,7 +18,7 @@ session_start();
         <p>Cliceáil ar an gcnaipe SEINN le do thoil chun éisteacht leis an amhrán, ansin freagair an cheist a leanann. Caithfidh tú éisteacht le 5 shoicind ar a laghad den cheol sula dtugann tú freagra</p>
         
         <audio id="audioPlayer1" controls>
-            <source src="../On Taobh Tuathail Amach.mp3" type="audio/mpeg">
+            <source src="On Taobh Tuathail Amach.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
 
@@ -38,21 +38,6 @@ session_start();
                 <input type="Submit" value="Submit">
             </form>
         </div>
-        <?php
-        $answer = $_POST['answer'];
-
-        // Create SQL query to insert data
-        $sql = "INSERT INTO responses (answer) VALUES ('$answer')";
-
-        if (mysqli_query($conn, $sql)) {
-            echo "Answer submitted successfully!";
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-
-        // Close connection
-        mysqli_close($conn);
-        ?>
     </div>   
 </body>
 </html>

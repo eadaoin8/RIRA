@@ -1,13 +1,14 @@
 <html>
+<script src="../RIRA/survey.js"></script>
   <?php
   // Database connection details
-  $host = 'localhost';
-  $username = 'root';
-  $password = '';
-  $database = 'RIRA';
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "RIRA";
 
   // Connect to the database
-  $conn = mysqli_connect($host, $username, $password, $database);
+  $conn = new mysqli($servername, $username, $password, $dbname);
 
   // Check connection
   if (!$conn) {
@@ -28,5 +29,5 @@
 
   // Close connection
   mysqli_close($conn);
-  ?>
+?>
 </html>

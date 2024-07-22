@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData(e.target);
         answer = formData.get('answer');
 
-        fetch('survey.php', {
+        fetch('surv1.php', {
           method: 'POST',
           body: new URLSearchParams({answer: answer})
         })
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         question1.classList.add('hidden');
         hasListenedEnough = false;
         audioPlayer1.currentTime = 0;
+        $answer = $_POST['answer'];
     });
 
     audioPlayer1.addEventListener('error', () => {
