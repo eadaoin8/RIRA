@@ -8,10 +8,7 @@ const end = document.querySelector(".end");
 //first question
 ul_1.addEventListener("click", function() {
   question1.style.display = "none";
-  question2.style.display = "block";
 })
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const audioPlayer1 = document.getElementById('audioPlayer1');
@@ -26,14 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
     document.getElementById('surveyForm').addEventListener('Submit', (e) => {
         e.preventDefault();
       
         const formData = new FormData(e.target);
         const answer = formData.get('answer');
 
-        
         fetch('survey.php', {
           method: 'POST',
           body: new URLSearchParams({answer: answer})
