@@ -16,9 +16,12 @@ session_start();
     <div class="container">
         <h1>Suirbhé Ceoil</h1>
         <p>Cliceáil ar an gcnaipe SEINN le do thoil chun éisteacht leis an amhrán, ansin freagair an cheist a leanann. Caithfidh tú éisteacht le 5 shoicind ar a laghad den cheol sula dtugann tú freagra</p>
-        <audio id="audioPlayer1" controls>
-            <source src="../RIRA/On Taobh Tuathail Amach.mp3
         
+        <audio id="audioPlayer1" controls>
+            <source src="../On Taobh Tuathail Amach.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
         <div id="question1" class="hidden">
             <p><strong>Cad a cheapann tú faoin amhrán</strong></p>
             <form id="surveyForm">

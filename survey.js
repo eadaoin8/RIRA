@@ -1,20 +1,11 @@
-const ul_1 = document.querySelector(".option");
-
-const question1 = document.querySelector(".question1");
-
-const survey = document.querySelector(".survey");
-const end = document.querySelector(".end");
-
-//first question
-ul_1.addEventListener("click", function() {
-  question1.style.display = "none";
-})
-
 document.addEventListener('DOMContentLoaded', () => {
   const audioPlayer1 = document.getElementById('audioPlayer1');
   const question1 = document.getElementById('question1');
   let hasListenedEnough = false;
 
+  audioPlayer1.muted = true;
+  audioPlayer1.play();
+  
     // user has listened for at least 5 seconds
     audioPlayer1.addEventListener('timeupdate', () => {
         if (audioPlayer1.currentTime >= 5 && !hasListenedEnough) {
@@ -27,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
       
         const formData = new FormData(e.target);
-        const answer = formData.get('answer');
+        answer = formData.get('answer');
 
         fetch('survey.php', {
           method: 'POST',
@@ -45,5 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
         hasListenedEnough = false;
         audioPlayer1.currentTime = 0;
     });
+
+    audioPlayer1.addEventListener('error', () => {
+      console.error('Error loading audio');
+      // Display error message to user
+  });
 });
 
