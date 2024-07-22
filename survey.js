@@ -1,3 +1,18 @@
+const ul_1 = document.querySelector(".option");
+
+const question1 = document.querySelector(".question1");
+
+const survey = document.querySelector(".survey");
+const end = document.querySelector(".end");
+
+//first question
+ul_1.addEventListener("click", function() {
+  question1.style.display = "none";
+  question2.style.display = "block";
+})
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const audioPlayer1 = document.getElementById('audioPlayer1');
   const question1 = document.getElementById('question1');
